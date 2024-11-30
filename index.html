@@ -3,11 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Guest Check-In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            color: #555;
+        }
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            color: green;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
-    <h1>HELLO ABHISHEK updated index file from local</h1>
-    <h1>HELLO ABHISHEK updated index file from local</h1>
+
+<div class="container">
+    <h2>Guest Check-In</h2>
+    <form id="checkin-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="checkin-date">Check-in Date</label>
+        <input type="date" id="checkin-date" name="checkin-date" required>
+
+        <label for="checkout-date">Checkout Date</label>
+        <input type="date" id="checkout-date" name="checkout-date" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div class="success-message" id="success-message">
+        Our Team will connect soon.
+    </div>
+</div>
+
+<script>
+    document.getElementById('checkin-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('success-message').style.display = 'block';
+        document.getElementById('checkin-form').reset();
+    });
+</script>
 
 </body>
 </html>
